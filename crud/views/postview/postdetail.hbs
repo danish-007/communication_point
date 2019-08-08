@@ -1,0 +1,40 @@
+<div class="card" style="width: 43.5rem;">
+<a class="btn btn-secondary" href="/"><i class="fa fa-list-alt">Back</i></a>
+  <div class="card-body">
+    {{#each list}}
+    <h5 class="card-title"><b>{{this.title}}<b/></h5>
+    <h6 class="card-subtitle mb-2 text-muted" style="font-size: 12px">{{this.name}}</h6>
+    <p class="card-text" style="font-size: 25px">{{this.description}}</p>
+    {{/each}}    
+    <hr>
+    </br>
+    </br>
+    <p><strong>Comments:</strong><i class="fa fa-comments" aria-hidden="true"></i></p>
+    {{#each comment_list}}
+    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-user" aria-hidden="true"></i> {{this.name}}:</h6>
+    <p class="card-text"><i class="fa fa-hand-o-right" aria-hidden="true"></i> {{this.description}}</p>
+    {{/each}}
+  </div>
+</div>
+</br>
+<form action="/comment/{{viewid}}" method="POST" autocomplete="off">
+    <div class="row">
+        <div class="col-md-4">
+        <div class="form-group">
+        <input type="text" class="form-control" name="name" placeholder=" Name..." >
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="form-group">
+
+        <input type="text" class="form-control" name="description" placeholder=" Comment Here..." >
+        </div>
+        </div>
+        <div class="col-md-4">
+        <div class="form-group">
+        <label>     </label>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-pen"></i>Submit</button>
+        </div>
+        </div>
+    </div>
+</form>

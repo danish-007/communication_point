@@ -1,0 +1,37 @@
+
+<h3><a class="btn btn-primary" href="/post" <i class="fa fa-plus"></i>Create Your Own</a> Post</h3>
+<table class="table table-stripped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">
+                Name
+            </th>
+            <th scope="col">
+                Title
+            </th>
+            <th scope="col">
+                Post   
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td><mark>{{this.name}}</mark></b></td>
+            <td><u>{{this.title}}</u></td>
+            <td><i>{{this.description}}</i></td>
+            <td>
+                <a href="/postdetail/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<script>
+    $(function(){            
+        var socket =io.connect();
+    });
+
+            
+</script>
